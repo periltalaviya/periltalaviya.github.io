@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peril Talaviya — Software Engineer</title>
+<meta name="description" content="Software engineer in Bengaluru. I build products and the infrastructure they run on: backend APIs, React front ends, and the cloud underneath.">
+<meta name="author" content="Peril Talaviya">
+<meta name="theme-color" content="#FFFCF7">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Peril Talaviya — Software Engineer">
+<meta property="og:description" content="I build products and the infrastructure they run on.">
+<meta property="og:url" content="https://periltalaviya.github.io">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+/* Runs before first paint so the theme never flashes. */
+(function () {
+  try {
+    var saved = localStorage.getItem("pt-theme");
+    var theme = saved || "light";
+    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.classList.add("js");
+    if (theme === "dark") {
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", "#15111C");
+    }
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+})();
+</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- soft colour wash + code confetti, both purely decorative -->
+<div class="deco" aria-hidden="true">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <span class="blob b4"></span><span class="blob b5"></span><span class="blob b6"></span>
+  <span class="blob b7"></span><span class="blob b8"></span>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="mark" href="#top" aria-label="Home">PT</a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="#about">about</a>
+      <a href="#journey">journey</a>
+      <a href="#experience">experience</a>
+      <a href="#stack">stack</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <div class="navbtns">
+      <button class="sqbtn" id="themeToggle" type="button" aria-label="Switch to dark theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.2 8.2 0 1 1 10.2 4a6.6 6.6 0 0 0 9.8 10.5z"/></svg>
+      </button>
+      <button class="sqbtn burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="#about">about</a><a href="#journey">journey</a><a href="#experience">experience</a>
+    <a href="#stack">stack</a><a href="#contact">contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ───────────────────────────────── hero -->
+<section class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <h1 class="reveal">Peril<br>Talaviya</h1>
+      <p class="sub mono reveal">// software engineer · bengaluru, india</p>
+      <p class="lead reveal">I build products and the infrastructure they run on. Backend APIs,
+         React front ends, and the cloud underneath, usually from the first commit.</p>
+      <div class="cta reveal">
+        <a class="btn btn--p" href="mailto:periltalaviya123@gmail.com">say hi</a>
+        <a class="btn btn--s" href="https://github.com/periltalaviya" target="_blank" rel="noopener">github</a>
+      </div>
+    </div>
+
+    <div class="term reveal" id="term">
+      <div class="term__bar">
+        <span class="tdot" style="background:#FF9EB5"></span>
+        <span class="tdot" style="background:#FFE08A"></span>
+        <span class="tdot" style="background:#9EE6C4"></span>
+        <span class="term__title mono">peril@dev — zsh</span>
+      </div>
+      <div class="term__body mono" id="termBody">
+        <div class="term__out" id="termOut">
+          <p><span class="pr">❯</span> <span id="typed"></span><span class="caret" id="caret"></span></p>
+        </div>
+        <form class="term__form" id="termForm" autocomplete="off">
+          <label class="pr" for="termIn">❯</label>
+          <input id="termIn" name="cmd" type="text" spellcheck="false" aria-label="Type a command">
+        </form>
+        <p class="term__hint">try
+          <button class="key" type="button" data-cmd="help">help</button>
+          <button class="key" type="button" data-cmd="stack">stack</button>
+          <button class="key" type="button" data-cmd="contact">contact</button>
+          — yes, it really works
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mq" aria-hidden="true">
+  <div class="mq__track"><span><i>$</i> git commit -m "ship it"</span><span>·</span><span>docker compose up -d</span><span>·</span><span><i>$</i> tofu apply</span><span>·</span><span><i>✓</i> 0 errors</span><span>·</span><span>npm run build</span><span>·</span><span><i>$</i> az login</span><span>·</span><span>200 OK</span><span>·</span><span>git push origin main</span><span>·</span><span><i>$</i> nginx -s reload</span><span>·</span><span><i>✓</i> all tests passing</span><span>·</span><span><i>$</i> git commit -m "ship it"</span><span>·</span><span>docker compose up -d</span><span>·</span><span><i>$</i> tofu apply</span><span>·</span><span><i>✓</i> 0 errors</span><span>·</span><span>npm run build</span><span>·</span><span><i>$</i> az login</span><span>·</span><span>200 OK</span><span>·</span><span>git push origin main</span><span>·</span><span><i>$</i> nginx -s reload</span><span>·</span><span><i>✓</i> all tests passing</span><span>·</span></div>
+</div>
+
+<!-- ───────────────────────────────── what I do -->
+<section class="sect" id="about">
+  <div class="wrap">
+    <span class="lab reveal"><b>01</b> what I do</span>
+    <h2 class="reveal">Things I'm good at</h2>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="ic" style="background:var(--mint)">
+          <svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+        </div>
+        <h3>Backend &amp; APIs</h3>
+        <p>Designing the data model, writing the APIs, then keeping them honest:
+           authentication, role based access, rate limits, and the connection pool
+           work nobody notices until it breaks.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic" style="background:var(--peach)">
+          <svg viewBox="0 0 24 24"><path d="M6.5 18A4.5 4.5 0 0 1 6 9a6 6 0 0 1 11.6 1.5A3.75 3.75 0 0 1 17.5 18z"/></svg>
+        </div>
+        <h3>Cloud &amp; platform</h3>
+        <p>Gateways, reverse proxies, CDN, containers and infrastructure as code.
+           Getting a deploy to be boring, repeatable, and provable after the fact.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic" style="background:var(--lilac)">
+          <svg viewBox="0 0 24 24"><path d="M12 3l2 5.5L19.5 10 14 12l-2 5.5L10 12 4.5 10 10 8.5z"/></svg>
+        </div>
+        <h3>AI integration</h3>
+        <p>Wiring model providers into something real people use: speech, images,
+           video. Picking the provider, handling the failures, and keeping an eye on
+           what it costs.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────────── journey -->
+<section class="sect" id="journey">
+  <div class="wrap">
+    <span class="lab reveal"><b>02</b> journey</span>
+    <h2 class="reveal">How I got here</h2>
+    <ol class="tl">
+      <li class="ti reveal">
+        <div class="tw mono">2018 — 2021</div>
+        <div class="tt"><h3>B.C.A., Computer Applications</h3><p class="org mono">Gujarat University</p></div>
+      </li>
+      <li class="ti reveal">
+        <div class="tw mono">2021 — 2023</div>
+        <div class="tt"><h3>M.S., Information Technology</h3><p class="org mono">Dhirubhai Ambani University</p></div>
+      </li>
+      <li class="ti reveal">
+        <div class="tw mono">Jan 2023</div>
+        <div class="tt"><h3>Full Stack Developer Intern</h3><p class="org mono">Actyv.ai</p>
+          <p>My first production codebase. Backend APIs, React features, and learning what
+             actually breaks once real users arrive.</p></div>
+      </li>
+      <li class="ti reveal">
+        <div class="tw mono">Jul 2023</div>
+        <div class="tt"><h3>Associate SDE 1</h3><p class="org mono">Actyv.ai</p>
+          <p>Converted from the internship. Shipped an internal component package that other
+             teams built on.</p></div>
+      </li>
+      <li class="ti reveal">
+        <div class="tw mono">Sep 2023 → now</div>
+        <div class="tt"><h3>Founding Engineer</h3><p class="org mono">Zephyr Pvt Ltd</p>
+          <p>Joined a brand new product team and built it out from the first commit: the
+             schema, the APIs, the front ends, and the cloud it all runs on.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ───────────────────────────────── experience -->
+<section class="sect" id="experience">
+  <div class="wrap">
+    <span class="lab reveal"><b>03</b> experience</span>
+    <h2 class="reveal">Where I've worked</h2>
+
+    <article class="job reveal">
+      <div class="job__head">
+        <div><h3>Founding Engineer</h3><p class="org mono">Zephyr Pvt Ltd</p></div>
+        <div class="job__meta mono">Sep 2023 — Present<br><span class="muted">Bengaluru</span></div>
+      </div>
+      <ul class="job__list">
+        <li>Joined with no code and no infrastructure. Set up the Azure, database, repositories and both codebases, designed the data model and the APIs, and took the product live. It now runs across three environments.</li>
+        <li>Wrote the video generation pipeline on ffmpeg. It mixes narration, sound effects and a background music with separate volume control per track, and handles animations and transitions. Also integrated OpenAI, Google Veo and Magnific for image and video generation.</li>
+        <li>Built authentication end to end: email and password sign in for the admin portal, mobile number and OTP for end users, and the password reset flow. Also built role based access control, checked on every endpoint and reflected in the UI.</li>
+        <li>Added Redis rate limiting on login, OTP and password reset with separate limits per account and per IP.</li>
+        <li>Integrated Gupshup for WhatsApp and OTP, including the delivery webhooks, so the admin screens show whether a message was sent, delivered, read or failed.</li>
+        <li>Optimised MongoDB connection management by eliminating duplicate pools, reducing idle connections by 50% and improving API resilience under load.</li>
+        <li>Built a reusable email module on Azure Communication Services that keeps templates in the database, so transactional wording changes without a deploy.</li>
+        <li>Built the speech layer: text to speech, speech to text and translation. Started on Microsoft AI Foundry and later moved it to ElevenLabs for better voice quality and word level timings.</li>
+        <li>Set up production routing with Azure Application Gateway and Nginx, and put Front Door in front of static assets to cut latency and egress cost. Sized the VMs from load tests rather than guesswork, added machines as traffic grew, and later moved the whole infrastructure to OpenTofu.</li>
+        <li>Moved deployments off the VMs into Docker images in Azure Container Registry, driven by GitHub Actions. The deploy logic had been duplicated on every machine and in every repo, so I pulled it into one place as reusable workflows. Added version endpoints and a daily job that checks the running build is the one that was actually deployed.</li>
+        <li>Built a fair amount of the product itself: a Chrome extension that captures live web pages, a Konva based editor for editing them, a Python service that parses PowerPoint into our format, and the PDF, SCORM and video export paths.</li>
+        <li>Handled VAPT findings, moved secrets out of GitHub Actions into Azure Key Vault, locked cloud access behind a VPN, and ran DR drills on the database and the machines.</li>
+      </ul>
+    </article>
+
+    <article class="job job--alt reveal">
+      <div class="job__head">
+        <div><h3>Associate SDE 1 · Full Stack Developer Intern</h3><p class="org mono">Actyv.ai</p></div>
+        <div class="job__meta mono">Jan 2023 — Aug 2023<br><span class="muted">Bengaluru</span></div>
+      </div>
+      <ul class="job__list">
+        <li>Worked on backend APIs and React features for production applications.</li>
+        <li>Built an internal NPM package of shared UI components, wired up to Node.js APIs.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ───────────────────────────────── stack -->
+<section class="sect" id="stack">
+  <div class="wrap">
+    <span class="lab reveal"><b>04</b> stack</span>
+    <h2 class="reveal">What I work with</h2>
+    <div class="rows">
+      <div class="row reveal"><p class="row__k mono">languages</p>
+        <ul class="stick mono"><li>TypeScript</li><li>JavaScript</li><li>Python</li></ul></div>
+      <div class="row reveal"><p class="row__k mono">backend</p>
+        <ul class="stick mono"><li>Node.js</li><li>NestJS</li><li>REST APIs</li><li>MongoDB</li><li>Redis</li><li>PostgreSQL</li><li>MySQL</li></ul></div>
+      <div class="row reveal"><p class="row__k mono">frontend</p>
+        <ul class="stick mono"><li>React</li><li>Konva</li><li>HTML / CSS</li></ul></div>
+      <div class="row reveal"><p class="row__k mono">cloud</p>
+        <ul class="stick mono"><li>Azure</li><li>Virtual Machines</li><li>App Gateway</li><li>Front Door</li><li>Blob Storage</li><li>Key Vault</li><li>App Configuration</li><li>Container Registry</li><li>VNets</li><li>NSGs</li><li>VPN</li></ul></div>
+      <div class="row reveal"><p class="row__k mono">platform</p>
+        <ul class="stick mono"><li>Docker</li><li>GitHub Actions</li><li>OpenTofu</li><li>Nginx</li><li>Linux</li><li>Gupshup</li><li>ffmpeg</li><li>load testing</li><li>Git</li></ul></div>
+      <div class="row reveal"><p class="row__k mono">practice</p>
+        <ul class="stick mono"><li>0→1 delivery</li><li>event driven integrations</li><li>AI-assisted development</li><li>RBAC</li><li>rate limiting</li><li>DR drills</li><li>on call</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────────── currently + contact -->
+<section class="sect" id="contact">
+  <div class="wrap">
+    <span class="lab reveal"><b>05</b> contact</span>
+    <h2 class="reveal">Let's talk</h2>
+    <div class="duo">
+      <div class="now reveal">
+        <h3>Currently</h3>
+        <p>Spending my time on the AI side: how agents actually behave once they are
+           inside a product, where a tool calling loop needs a confirmation step before it
+           does something irreversible, and how you tell whether a prompt change made things
+           better or just different. I build with AI coding tools daily, which is a useful
+           way to find where they still need a person in the loop.</p>
+      </div>
+      <div class="cbox reveal">
+        <a class="cl" href="mailto:periltalaviya123@gmail.com"><b class="mono">mail</b><span>periltalaviya123@gmail.com</span></a>
+        <a class="cl" href="https://github.com/periltalaviya" target="_blank" rel="noopener"><b class="mono">git</b><span>github.com/periltalaviya</span></a>
+        <a class="cl" href="https://www.linkedin.com/in/peril-talaviya-6128bb210/" target="_blank" rel="noopener"><b class="mono">in</b><span>linkedin.com/in/peril-talaviya</span></a>
+        <a class="cl" href="tel:+916353223620"><b class="mono">tel</b><span>+91 63532 23620</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bar">
+  <span class="mono">main</span>
+  <span class="y">⚡ built by hand, no framework</span>
+  <span class="r mono">Bengaluru, India</span>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
